@@ -28,8 +28,8 @@ python app.py
 
 ## 5. 프로젝트 구조
 - `templates/`: HTML 템플릿
+- `src/input.css`: Tailwind 입력 파일
 - `static/`: CSS, JS 등 정적 파일
-  - `src/input.css`: Tailwind 입력 파일
   - `css/tailwind.css`: 빌드된 Tailwind CSS
 
 브라우저에서 http://127.0.0.1:5000/ 에 접속하세요.
@@ -52,18 +52,13 @@ npm install -D tailwindcss @tailwindcss/cli
 - 추가 도구 (선택): `npm install -D postcss autoprefixer concurrently` (이미 설치됨).
 
 ### 6.3. 입력 파일 생성 및 설정
-1. 입력 CSS 생성: `src/input.css`에 다음 내용 작성:
-   ```css
-   @import "tailwindcss";
-   ```
-   - 이 지시어가 Tailwind의 모든 유틸리티 클래스를 포함합니다.
-   - 커스텀 CSS 추가 가능 (예: `@import "tailwindcss"; body { custom: rule; }`).
 
-2. 설정 파일 생성 (선택, 기본값으로 충분):
-   ```
-   npx tailwindcss init
-   ```
-   - `tailwind.config.js` 생성. 기본 설정으로 작동하며, 필요 시 테마/플러그인 커스텀.
+이미 세팅되어 있지만 참조용입니다.
+
+입력 CSS 파일 생성: `src/input.css`에 아래 내용을 작성하세요.
+```css
+@import "tailwindcss";
+```
 
 ### 6.4. 빌드 설정 (package.json scripts)
 package.json에 이미 설정되어 있지만, 수동 확인:
