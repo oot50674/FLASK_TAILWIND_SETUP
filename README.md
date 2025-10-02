@@ -51,17 +51,12 @@ npm install -D tailwindcss @tailwindcss/cli
 - `@tailwindcss/cli`: v4 CLI 도구 (빌드 명령어 실행).
 - 추가 도구 (선택): `npm install -D postcss autoprefixer concurrently` (이미 설치됨).
 
-### 6.3. 입력 파일 생성 및 설정
-
-이미 세팅되어 있지만 참조용입니다.
-
-입력 CSS 파일 생성: `src/input.css`에 아래 내용을 작성하세요.
+### 6.3. input.css
 ```css
 @import "tailwindcss";
 ```
 
 ### 6.4. 빌드 설정 (package.json scripts)
-package.json에 이미 설정되어 있지만, 수동 확인:
 ```json
 "scripts": {
   "watch:css": "tailwindcss -i ./src/input.css -o ./static/css/tailwind.css --watch",
@@ -113,27 +108,8 @@ package.json에 이미 설정되어 있지만, 수동 확인:
 3. 자동 재빌드 확인:
    - src/input.css나 HTML 클래스 수정 → 저장 → 브라우저 새로고침으로 변경 반영.
 
-### 6.7. 문제 해결
-- **npm 명령어 오류**: Node.js 재설치 또는 PATH 확인 (`npm --version` 테스트).
-- **빌드 실패**: 입력 파일 경로 확인 (`./src/input.css` 존재 여부).
-- **스타일 미적용**: static/css/tailwind.css 생성 확인 및 Flask static 서빙 확인.
-- **Windows 이슈**: PowerShell 사용 또는 shell=True 옵션 (app.py에서 이미 적용).
-
-기본 설정으로 작동하며, 필요 시 `tailwind.config.js` 생성: `npx tailwindcss init`
-
-## 7. VS Code 설정 (CSS 경고 숨김)
+## 6. VS Code 설정 (CSS 경고 숨김)
 
 필요 시 직접 수정하세요.
 
 또는 수동 세팅: VS Code 설정 (Ctrl+,)에서 "css.lint.propertyIgnoredDueToDisplay"를 "ignore"로 변경.
-
-## 8. Tailwind CSS 데모 (index.html)
-index.html에 다양한 Tailwind 유틸리티를 데모로 추가했습니다:
-
-- **그리드 카드**: 반응형 그리드 (grid-cols-1 md:grid-cols-2 lg:grid-cols-3), 호버 효과 (hover:shadow-lg).
-- **폼**: 입력 필드와 버튼 (focus:ring, space-y-4).
-- **리스트와 버튼**: 타이포그래피 (font-bold, italic), 색상 변형, 플렉스 (flex flex-wrap gap-2).
-- **반응형**: md:block (데스크톱만 표시), 그라데이션 배경 (bg-gradient-to-r).
-- JS 버튼 클릭 시 알림 유지.
-
-브라우저에서 확인하세요. Tailwind 클래스 수정 시 자동 재빌드 적용.
