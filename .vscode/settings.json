@@ -1,0 +1,5 @@
+{
+  "css.lint.propertyIgnoredDueToDisplay": "ignore",
+  "css.validate": false,
+  "scss.validate": false
+}

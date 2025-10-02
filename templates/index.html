@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App - Tailwind 데모</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}">
+</head>
+<body class="bg-gray-100 min-h-screen py-8">
+    <!-- 헤더 -->
+    <header class="bg-blue-600 text-white p-6 rounded-lg shadow-md mx-4 md:mx-8">
+        <h1 class="text-4xl font-bold text-center">Hello, Flask with Tailwind CSS!</h1>
+        <p class="text-center mt-2 opacity-90">다양한 Tailwind 유틸리티 데모</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-8">
+        <!-- 그리드 카드 데모 -->
+        <section class="my-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">그리드 카드 데모</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">카드 1</h3>
+                    <p class="text-gray-600">Tailwind의 그리드와 플렉스 레이아웃 예시. 반응형으로 변경됩니다.</p>
+                    <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded">더 보기</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-green-600 mb-2">카드 2</h3>
+                    <p class="text-gray-600">색상 변형과 호버 효과. shadow와 transition 포함.</p>
+                    <button class="mt-4 bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded">더 보기</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-purple-600 mb-2">카드 3</h3>
+                    <p class="text-gray-600">반응형 그리드: 모바일 1열, 데스크톱 3열.</p>
+                    <button class="mt-4 bg-purple-500 hover:bg-purple-700 text-white px-4 py-2 rounded">더 보기</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 폼 데모 -->
+        <section class="my-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">폼 데모</h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">이름</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="이름 입력">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">이메일</label>
+                    <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="이메일 입력">
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md font-medium">제출</button>
+            </form>
+        </section>
+
+        <!-- 리스트와 버튼 데모 -->
+        <section class="my-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">리스트와 버튼 데모</h2>
+            <ul class="space-y-2 list-disc list-inside bg-white p-4 rounded-lg shadow-md">
+                <li class="text-gray-700">Tailwind의 타이포그래피: <span class="font-bold text-lg">굵은 텍스트</span>, <span class="italic">기울임</span></li>
+                <li class="text-gray-700">색상 팔레트: <span class="text-red-500">빨강</span>, <span class="text-yellow-500">노랑</span>, <span class="text-pink-500">핑크</span></li>
+                <li class="text-gray-700">유틸리티 클래스: <span class="underline decoration-wavy">밑줄</span>, <span class="line-through">취소선</span></li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <button id="myButton" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded cursor-pointer">기존 버튼 (JS 알림)</button>
+                <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded cursor-pointer">삭제</button>
+                <button class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded cursor-pointer">경고</button>
+            </div>
+        </section>
+
+        <!-- 반응형 데모 -->
+        <section class="my-8 hidden md:block bg-gradient-to-r from-purple-500 to-blue-500 p-6 rounded-lg text-white">
+            <h2 class="text-2xl font-semibold mb-2">반응형 데모 (데스크톱만 표시)</h2>
+            <p>모바일에서는 숨겨지고, md 이상 화면에서 보입니다. (hidden md:block)</p>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
