@@ -47,7 +47,7 @@ npm install -D tailwindcss @tailwindcss/cli
 ```
 - `-D`: 개발 의존성으로 설치 (프로덕션 배포 시 불필요).
 - `@tailwindcss/cli`: v4 CLI 도구 (빌드 명령어 실행).
-- 추가 도구 (선택): `npm install -D postcss autoprefixer concurrently` (이미 설치됨).
+- 추가 도구 (선택): `npm install -D postcss autoprefixer concurrently`
 
 ### 6.3. input.css
 ```css
