@@ -21,10 +21,8 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
-- Flask 서버가 시작되며, 동시에 Tailwind CSS watch (npm run watch:css)가 백그라운드에서 자동 실행됩니다.
+- Flask 서버가 시작되며, 동시에 Tailwind CSS watch (npm run watch:css)가 백그라운드에서 자동 실행됩니다. (서비스 배포시 주석처리 필요)
 - 변경 감지 시 CSS 자동 재빌드.
-- **Windows 팁**: 'npm not found' 오류 시, Node.js PATH 확인 또는 app.py의 subprocess에 shell=True 설정 (이미 적용됨). PowerShell 사용 추천.
-- 브라우저에서 http://127.0.0.1:5000/ 에 접속하세요.
 
 ## 5. 프로젝트 구조
 - `templates/`: HTML 템플릿
